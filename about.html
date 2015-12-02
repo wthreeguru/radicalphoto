@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RadicalPhoto About</title>
+	<link href='http://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet'>
+	<link type="text/css" rel="stylesheet" href="css/radicalphoto.css">
+</head>
+<body>
+
+<div id="header">
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="gallery.html">Gallery</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="contact.html">Contact</a></li>
+	</ul>
+
+	<h1>RadicalPhoto</h1>
+
+</div>
+
+<div id="main_wrapper">
+
+	<div id="content">
+	<h2>About RadicalPhoto</h2>
+
+	<p>Today is <span id="date_current">July 17, 2015</span>. Stay tuned, we have exciting news about our company coming in a few more weeks!</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+
+	<h3>Our Team</h3>
+
+	<p id="bios">
+		<a id="sheila" href="sheila.html">Sheila</a> (President) | 
+		<a id="frank" href="frank.html">Frank</a> (Vice President) | 
+		<a id="joanne" href="joanne.html">Joanne</a> (Senior Photographer)
+	</p> 
+
+	<div id="bio"><h4 id="bio_header"></h4><img id="bio_image"></div><!-- h4 text hard-coded via JS --><!-- alt and title tags hard-coded via JS -->
+
+	</div>
+
+	<div id="footer">
+	<p>All content &copy; Copyright</p>
+	</div>
+
+</div>
+
+<script>
+
+//----------------------------------------
+// variables for change date - code start
+var var_date_current = document.getElementById('date_current');
+var var_date = new Date ();
+var var_date_day = var_date.getDate();
+var var_date_month = var_date.getMonth();
+var var_date_year = var_date.getFullYear();
+var var_date_month_text = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+// variables for change date - code end
+//----------------------------------------
+
+//----------------------------------------
+// change date dynamically - code start
+// set the function variables
+function changedate() {
+	var_date_current.innerHTML = var_date_month_text[var_date_month] + " " + var_date_day + ", " + var_date_year;
+}
+// trigger the change date
+changedate();
+// change date dynamically - code end
+//----------------------------------------
+
+//----------------------------------------
+// variables for the onmouseover of text - code start
+var var_sheila = document.getElementById('sheila');
+var var_frank = document.getElementById('frank');
+var var_joanne = document.getElementById('joanne');
+var var_bio = document.getElementById('bio');
+var var_bio_image = document.getElementById('bio_image');
+var var_bio_header = document.getElementById('bio_header');
+
+    
+// change image for bio
+var_sheila.onmouseover = function () {
+	var_bio_image.src = "images/bio1.jpg";
+	var_bio_image.width = 200;
+	var_bio_image.height = 133;
+	var_bio_image.alt = "sheilla";
+    var_bio_image.title = "Sheilla";
+	var_bio_header.innerHTML = "President: Sheilla";
+}
+
+var_frank.onmouseover = function () {
+	var_bio_image.src = "images/bio3.jpg";
+	var_bio_image.width = 200;
+	var_bio_image.height = 133;
+	var_bio_image.alt = "frank";
+    var_bio_image.title = "Frank";
+	var_bio_header.innerHTML = "Vice President: Frank";
+}
+
+var_joanne.onmouseover = function () {
+	var_bio_image.src = "images/bio2.jpg";
+	var_bio_image.width = 200;
+	var_bio_image.height = 133;
+	var_bio_image.alt = "joanne";
+    var_bio_image.title = "Joanne";
+	var_bio_header.innerHTML = "Senior Photographer: Joanne";
+}
+// variables for the onmouseover of text - code end
+//----------------------------------------
+</script>
+</body>
+</html>

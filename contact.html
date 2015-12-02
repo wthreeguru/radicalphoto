@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RadicalPhoto Contact</title>
+	<link href='http://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet' type='text/css'>
+	<link type="text/css" rel="stylesheet" href="css/radicalphoto.css">
+</head>
+<body>
+
+<div id="header">
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="gallery.html">Gallery</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="contact.html">Contact</a></li>
+	</ul>
+
+	<h1>RadicalPhoto</h1>
+
+</div>
+
+<div id="main_wrapper">
+
+	<div id="content">
+	<h2>Contact RadicalPhoto</h2>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+
+	<form action="http://derekallard.com/echo.php" method="post" id="myform">
+
+		<p class="errors">All fields are required.</p>
+
+		<p><label>Name: </label><input type="text" size="25" name="name" id="username"><label id="username_error"></label></p>
+		<p><label>Email: </label><input type="text" size="25" name="email" id="email"><label id="email_error"></label></p>
+		<p><label>Message:</label><br> <textarea cols="50" rows="5" name="message" id="my_message"></textarea><label id="my_message_error"></label></p>
+		<p><input id="btn_submit" type="submit" value="Contact Us">&nbsp;<input type="reset"></p>
+        
+	</form>
+
+	</div>
+
+	<div id="footer">
+	<p>All content &copy; Copyright</p>
+	</div>
+
+</div>
+
+<script>
+//----------------------------------------
+// variables for contact - start code
+var var_myform = document.getElementById('myform');
+var var_username = document.getElementById('username');
+var var_email = document.getElementById('email');
+var var_my_message = document.getElementById('my_message');
+var var_btn_submit = document.getElementById('btn_submit');
+// variables for error messages
+var var_username_error = document.getElementById('username_error');
+var var_email_error = document.getElementById('email_error');
+var var_my_message_error = document.getElementById('my_message_error');
+
+
+//----------------------------------------
+var_myform.onsubmit = function () {
+	// code to run
+	var errors = 0;
+	var frm_name = var_username.value;
+	var frm_email = var_email.value;
+	var frm_message = var_my_message.value; 
+	
+	if (frm_name == "") {
+		var_username.style.border = "1px solid #C00";
+		var_username.style.boxShadow = "0 0 5px #C00";
+		var_username_error.innerHTML = " Please verify your name";
+		var_username_error.style.color = "#ff0000";
+		errors++;
+	} else {
+		 var_username.style.border = "1px solid green";
+		 var_username.style.boxShadow = "none";
+		 var_username_error.innerHTML = "";
+		}
+	
+	
+	if (frm_email == "") {
+		var_email.style.border = "1px solid #C00";
+		var_email.style.boxShadow = "0 0 5px #C00";
+		var_email_error.innerHTML = " Please verify your email";
+		var_email_error.style.color = "#ff0000";
+		errors++;
+	} else {
+		 var_email.style.border = "1px solid green";
+		 var_email.style.boxShadow = "none";
+		 var_email_error.innerHTML = "";
+		}	
+	
+	if (frm_message == "") {
+		var_my_message.style.border = "1px solid #C00";
+		var_my_message.style.boxShadow = "0 0 5px #C00";
+		var_my_message_error.innerHTML = " Please verify your message";
+		var_my_message_error.style.color = "#ff0000";
+		errors++;
+	} else {
+		 var_my_message.style.border = "1px solid green";
+		 var_my_message.style.boxShadow = "none";
+		 var_my_message_error.innerHTML = "";
+		}
+	
+	
+	if (errors > 0) {
+		// Form Stops Submitting
+		return false;
+	}
+	
+
+}
+// variables for contact - end code
+//----------------------------------------
+</script>
+
+</body>
+</html>
