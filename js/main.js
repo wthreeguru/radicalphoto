@@ -27,7 +27,7 @@ function changetext() {
 
 //changetext();
 // setimeout to give delay
-var text_start_timeout = setTimeout(changetext, 2500);
+setTimeout(changetext, 2500);
 
 // gallery.html
 var_blue_dress.onmouseover = function () {
